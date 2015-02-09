@@ -39,4 +39,13 @@ describe('Summary parsing', function () {
         assert(LEXED.chapters[3].title);
         assert(LEXED.chapters[4].title);
     });
+
+    it('should correctly convert it to text', function(done) {
+        var text = summary.toText(LEXED);
+
+        qdone(summary(text)
+        .then(function(lexed) {
+            assertObjectsEqual(lexed, LEXED);
+        }), done);
+    });
 });
