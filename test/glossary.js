@@ -25,4 +25,13 @@ describe('Glossary parsing', function () {
             return !Boolean(e.name && e.description);
         })));
     });
+
+    it('should correctly convert it to text', function(done) {
+        var text = glossary.toText(LEXED);
+
+        qdone(glossary(text)
+        .then(function(lexed) {
+            assertObjectsEqual(lexed, LEXED);
+        }), done);
+    });
 });
