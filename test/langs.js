@@ -23,4 +23,13 @@ describe('Languages parsing', function () {
         assert.equal(LEXED[1].path,'fr/');
         assert.equal(LEXED[1].title,'French');
     });
+
+    it('should correctly convert it to text', function(done) {
+        var text = langs.toText(LEXED);
+
+        qdone(langs(text)
+        .then(function(lexed) {
+            assertObjectsEqual(lexed, LEXED);
+        }), done);
+    });
 });
