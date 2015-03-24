@@ -7,7 +7,7 @@
     "dependencies": {
         "q": "^1.1.2",
         "lodash": "^3.2.0",
-        "cheerio": "0.18.0",
+        "cheerio": "^0.19.0",
         "tmp": "0.0.24"
     },
     "devDependencies": {
